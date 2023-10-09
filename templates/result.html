@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333333; /* Change this color to your desired background color */
+            color: white;
+        }
+        .result {
+            font-size: 48px;
+            color: #4CAF50;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result">{{ final_result }}</div>
+    <div class="info">Data stored in MySQL and MongoDB</div>
+    <a href="/predict" style="color: #4CAF50;">Go Back to Prediction Form</a>
+</body>
+</html>

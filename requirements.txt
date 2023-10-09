@@ -1,0 +1,14 @@
+numpy
+pandas
+Flask
+scikit-learn
+seaborn
+sqlalchemy
+pymysql
+pymongo
+mysql
+mysql-connector-python
+dnspython
+boto3
+cryptography
+-e .
