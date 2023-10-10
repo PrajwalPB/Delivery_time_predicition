@@ -19,5 +19,13 @@ class CustomException(Exception):
         self.error_message = error_message_detail(error_message,error_detail=error_detail)
     def __str__(self) -> str:
         return self.error_message
+    
+
+
+class MySQLDatabaseError(Exception):
+    pass
+
+class MongoDBError(Exception):
+    pass
 
 

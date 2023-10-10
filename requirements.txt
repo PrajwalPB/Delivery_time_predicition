@@ -11,4 +11,5 @@ mysql-connector-python
 dnspython
 boto3
 cryptography
+python-dotenv
 -e .
