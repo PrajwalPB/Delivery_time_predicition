@@ -14,6 +14,14 @@ application = Flask(__name__)
 
 app = application
 
+@app.errorhandler(Exception)
+def handle_exception(error):
+    # Log the exception
+    app.logger.error("An error occurred: %s", error)
+
+    # Render a custom error page
+    return render_template('error.html', error=error), 500
+
 # MySQL database error handler
 @app.errorhandler(MySQLDatabaseError)
 def handle_mysql_database_error(error):
