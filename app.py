@@ -14,6 +14,10 @@ application = Flask(__name__)
 
 app = application
 
+@app.route('/healthz')
+def healthz():
+    return '', 200
+
 @app.errorhandler(Exception)
 def handle_exception(error):
     # Log the exception
