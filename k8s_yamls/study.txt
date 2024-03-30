@@ -1,0 +1,7 @@
+The Kubernetes Metrics Server is an aggregator of resource usage data in your cluster, and it isn't deployed by default in Amazon EKS clusters
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl get deployment metrics-server -n kube-system              
+
+
+
+also my master node was in us-east-1 and the cluster got created in us-east2 and it worked 

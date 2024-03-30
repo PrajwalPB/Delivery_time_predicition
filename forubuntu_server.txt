@@ -1,0 +1,7 @@
+mysql-client-8.0/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 amd64 [installed,automatic]
+mysql-client-core-8.0/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 amd64 [installed,automatic]
+mysql-common/jammy,now 5.8+1.0.8 all [installed,automatic]
+mysql-server-8.0/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 amd64 [installed,automatic]
+mysql-server-core-8.0/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 amd64 [installed,automatic]
+mysql-testsuite-8.0/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 amd64 [installed,automatic]
+mysql-testsuite/jammy-updates,jammy-security,now 8.0.34-0ubuntu0.22.04.1 all [installed]

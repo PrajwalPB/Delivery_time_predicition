@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: prajwalpb/delivery:1.0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: log-volume
+          mountPath: /app/logs
+        resources:
+          limits:
+            cpu: "0.5"  
+            memory: "512Mi"  
+          requests:
+            cpu: "0.1"  
+            memory: "256Mi"
+        - name: s3-upload
+          image: amazon/aws-cli
+          command: [ "sh", "-c", "aws s3 sync /app/logs s3://your-s3-bucket-name" ]
+          volumeMounts:
+          - name: log-volume
+            mountPath: /app/logs
+        volumes:
+          - name: log-volume
+            emptyDir: {}
+
+      imagePullSecrets:
+      - name: dockerhub-secret
+      
+
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
